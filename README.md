@@ -21,7 +21,7 @@ import "@/styles/view-transitions.css";
 import type { AppProps } from "next/app";
 import singletonRouter from 'next/dist/client/router';
 
-import { useTransitionRouterEvents, handleBeforePopState } from 'next-rich-view-transitions';
+import { useTransitionRouterEvents, getBeforePopStateHandler } from 'next-rich-view-transitions';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 
@@ -30,7 +30,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
   useTransitionRouterEvents(singletonRouter);
   useEffect(() => {
-    router.beforePopState((props) => handleBeforePopState(props, router));
+    router.beforePopState(getBeforePopStateHandler(router));
   }, []);
 
   return (
@@ -41,6 +41,10 @@ export default function App({ Component, pageProps }: AppProps) {
 
 ### 2) Add view-transitions.css
 ```css
+.no-view-transition {
+  view-transition-name: no-view-transition;
+}
+
 @keyframes fade-in {
   from { opacity: 0; }
 }
@@ -85,7 +89,7 @@ export default function App({ Component, pageProps }: AppProps) {
 import NextLink from 'next/link';
 import React, { useCallback } from 'react';
 import { useRouter } from 'next/router';
-import { startTransition } from 'next-rich-view-transitions';
+import { startViewTransition } from 'next-rich-view-transitions';
 
 export function Link(props: React.ComponentProps<typeof NextLink>) {
   const { href, as, replace, scroll } = props;
@@ -101,10 +105,10 @@ export function Link(props: React.ComponentProps<typeof NextLink>) {
         e.preventDefault();
 
         const navigate = replace ? router.replace : router.push;
-        // Find an image that will be transitioned. Feel free to change that.
-        const transitionableImg = e.currentTarget.querySelector<HTMLImageElement>('.transitionable-img') || document.querySelector('#transition-img');
+        // Find an image that should start transitioning. Feel free to change that code.
+        const transitionImg = e.currentTarget.querySelector<HTMLImageElement>('.transitionable-img') || document.querySelector('#transition-img');
 
-        startTransition(transitionableImg).then(() => {
+        startViewTransition(transitionImg).then(() => {
           navigate(as || href, as, { scroll: scroll ?? true });
         });
       }

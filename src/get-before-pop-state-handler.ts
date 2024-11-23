@@ -13,7 +13,7 @@ export interface NextHistoryState {
   options: TransitionOptions;
 }
 
-export const handleBeforePopState = (props: NextHistoryState, router: NextRouter) => {
+export const getBeforePopStateHandler = (router: NextRouter) => (props: NextHistoryState) => {
   const key = (props as unknown as { key: string }).key;
   const { url, as, options } = props;
 

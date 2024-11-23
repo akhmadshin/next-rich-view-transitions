@@ -3,7 +3,7 @@ import { timeout } from './utils/timeout';
 import { getElementSelector } from './utils/get-element-selector';
 import { getElementAbsolutePosition } from './utils/get-element-absolute-position';
 
-export const startTransition = async (fromImg: HTMLImageElement | null) => {
+export const startViewTransition = async (fromImg: HTMLImageElement | null) => {
   if (fromImg) {
     const linkSelector = getElementSelector(fromImg);
 
@@ -19,8 +19,8 @@ export const startTransition = async (fromImg: HTMLImageElement | null) => {
     fromImg.style.viewTransitionName = '__NRVT_transition-img';
   }
   await runTransition();
+  // TODO: Find out why transitions works unstable without it
   await timeout(8);
-
 }
 
 

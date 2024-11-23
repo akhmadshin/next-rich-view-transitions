@@ -1,9 +1,13 @@
 import React from 'react';
 import { ImagesList } from '@/components/ImagesList';
+import { Credits } from '@/components/Header';
 
 const Page = () => {
   return (
-    <ImagesList id={0} />
+    <>
+      <Credits/>
+      <ImagesList id={0} />
+    </>
   );
 };
 

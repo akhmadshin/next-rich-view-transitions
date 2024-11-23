@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react';
 import { useRouter } from 'next/router';
 import { ImagesList } from '@/components/ImagesList';
+import { Credits } from '@/components/Header';
 
 const r = /\d+/;
 
@@ -15,7 +16,10 @@ const Page = () => {
 
 
   return (
-    <ImagesList id={id} />
+    <>
+      <Credits/>
+      <ImagesList id={id} />
+    </>
   );
 };
 
