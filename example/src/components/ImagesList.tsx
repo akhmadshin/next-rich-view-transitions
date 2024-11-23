@@ -23,7 +23,7 @@ export const ImagesList: React.FC<Props> =  ({ id }) => {
     <>
       <Container className="my-8">
         <Image
-          id="#transition-img"
+          id="transition-img"
           className="aspect-[16/9] transitionable-img"
           priority
           sizes="100vw"
@@ -36,6 +36,7 @@ export const ImagesList: React.FC<Props> =  ({ id }) => {
         <div className="my-12 block grid grid-cols-4 gap-y-2 gap-x-4">
           {nextImages && nextImages.map((img, index) => (
             <WithImagePrefetch
+              key={index}
               src={`/${img.data.attributes.name}`}
               height={img.data.attributes.height}
               width={img.data.attributes.width}
