@@ -5,10 +5,10 @@ That library lets you tame View Transitions API in Next.js Pages Router.
 ## Installation
 
 ```sh
-$ npm install next-query-glue
+$ npm install next-rich-view-transitions
 ```
 ```sh
-$ yarn add next-query-glue
+$ yarn add next-rich-view-transitions
 ```
 
 ## Getting started
