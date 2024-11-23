@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
-import { SingletonRouter } from 'next/router';
+import type { SingletonRouter } from 'next/dist/client/router';
+
 import { getHandleRouteChangeComplete } from './utils/handle-route-change-complete';
 import { handleHashChangeComplete, getHandleHashChangeStart } from './utils/handle-hash-change';
 
