@@ -1,0 +1,47 @@
+{
+  "name": "next-rich-view-transitions",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "Tame View Transitions API in Next.js Pages Router",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": "./dist/index.js",
+  "scripts": {
+    "build": "bunchee",
+    "dev": "bunchee --watch"
+  },
+  "keywords": [
+    "next",
+    "next.js",
+    "view transitions",
+    "route transitions",
+    "pages router"
+  ],
+  "author": {
+    "name": "Vadim Akhmadshin",
+    "email": "hello@akhmadshin.dev",
+    "url": "https://akhmadshin.dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akhmadshin/next-rich-view-transitions.git"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/react": "^18.2.78",
+    "bunchee": "^5.1.2",
+    "next": ">=12",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "typescript": "^5.4.5"
+  },
+  "peerDependencies": {
+    "next": ">=12",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "packageManager": "pnpm@9.1.2"
+}
