@@ -14,7 +14,7 @@ export const getHandleHashChangeStart = (singletonRouter: SingletonRouter) => ()
   }
 }
 
-export const handleHashChangeComplete = () => {
+export const getHandleHashChangeComplete = (singletonRouter: SingletonRouter) => () => {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-expect-error
   const routerKey = singletonRouter.router!._key;

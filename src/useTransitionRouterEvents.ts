@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import type { SingletonRouter } from 'next/dist/client/router';
 
 import { getHandleRouteChangeComplete } from './utils/handle-route-change-complete';
-import { handleHashChangeComplete, getHandleHashChangeStart } from './utils/handle-hash-change';
+import { getHandleHashChangeComplete, getHandleHashChangeStart } from './utils/handle-hash-change';
 
 export function useTransitionRouterEvents(singletonRouter: SingletonRouter) {
   useEffect(() => {
@@ -12,6 +12,7 @@ export function useTransitionRouterEvents(singletonRouter: SingletonRouter) {
 
     const handleRouteChangeComplete = getHandleRouteChangeComplete(singletonRouter);
     const handleHashChangeStart = getHandleHashChangeStart(singletonRouter);
+    const handleHashChangeComplete = getHandleHashChangeComplete(singletonRouter);
 
     let newRouterKey = (singletonRouter.router as never as { _key: string })._key;
     if (window.__NRVT_routerKeyByHashRouteKey && window.__NRVT_routerKey) {
