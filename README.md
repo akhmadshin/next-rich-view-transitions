@@ -1,6 +1,6 @@
 # next-rich-view-transitions
 
-Tame View Transitions API in Next.js Pages Router.
+That library lets you tame View Transitions API in Next.js Pages Router.
 
 ## Installation
 
