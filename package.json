@@ -1,6 +1,6 @@
 {
   "name": "next-rich-view-transitions",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "type": "module",
   "description": "Tame View Transitions API in Next.js Pages Router",
   "main": "./dist/index.js",

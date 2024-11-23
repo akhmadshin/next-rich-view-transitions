@@ -13,7 +13,7 @@ export interface NextHistoryState {
   options: TransitionOptions;
 }
 
-export const getBeforePopStateHandler = (router: NextRouter) => (props: NextHistoryState) => {
+export const bpsViewTransitions = (props: NextHistoryState, router: NextRouter) => {
   const key = (props as unknown as { key: string }).key;
   const { url, as, options } = props;
 
