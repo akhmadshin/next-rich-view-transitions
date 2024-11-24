@@ -29,6 +29,7 @@
     "type": "git",
     "url": "git+https://github.com/akhmadshin/next-rich-view-transitions.git"
   },
+  "homepage": "https://next-rich-view-transitions.vercel.app",
   "license": "MIT",
   "devDependencies": {
     "@types/react": "^18.2.78",
