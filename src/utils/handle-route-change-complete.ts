@@ -38,12 +38,8 @@ export const getHandleRouteChangeComplete = (singletonRouter: SingletonRouter) =
   const imgSelector = sessionStorage.getItem(`__NRVT_view_transition_image_selector_${backRouterKey}`);
   const img = imgSelector ? document.querySelector<HTMLImageElement>(imgSelector) : undefined;
 
+  cleanUp();
   if (img && isViewTransitionAvailable) {
-    const el = document.querySelector<HTMLImageElement>(`[style*='view-transition-name']`);
-    if (el) {
-      el.style.viewTransitionName = '';
-    }
-
     img.style.viewTransitionName = '__NRVT_transition-img';
   } else {
     // Navigation via clicking link
@@ -51,12 +47,6 @@ export const getHandleRouteChangeComplete = (singletonRouter: SingletonRouter) =
 
     if (transitionImg) {
       const imgSelector = getElementSelector(transitionImg) || '';
-
-      const el = document.querySelector<HTMLImageElement>(`[style*='view-transition-name']`);
-      if (el) {
-        el.style.viewTransitionName = '';
-      }
-
       transitionImg.style.viewTransitionName = '__NRVT_transition-img';
       sessionStorage.setItem(`__NRVT_view_transition_image_selector_${backRouterKey}`, imgSelector);
     }

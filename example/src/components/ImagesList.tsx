@@ -33,7 +33,7 @@ export const ImagesList: React.FC<Props> =  ({ id }) => {
           width={cover.data.attributes.width}
           height={cover.data.attributes.height}
         />
-        <div className="my-12 block grid grid-rows-2 grid-cols-2 lg:grid-rows-1 lg:grid-cols-4 gap-4">
+        <div className="my-10 block grid grid-rows-2 grid-cols-2 lg:grid-rows-1 lg:grid-cols-4 gap-4">
           {nextImages && nextImages.map((img, index) => (
             <WithImagePrefetch
               key={index}

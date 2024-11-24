@@ -31,10 +31,7 @@ export const handleHistoryTransitionStarted = async (futureKeyOrig: string) => {
       const isViewTransitionAvailable = isTransitionAvailable(`${routerKey}-${futureKey}`);
 
       if (isViewTransitionAvailable) {
-        const el = document.querySelector<HTMLImageElement>(`[style*='view-transition-name']`);
-        if (el) {
-          el.style.viewTransitionName = '';
-        }
+        cleanUp();
         clickedImg.style.viewTransitionName = '__NRVT_transition-img';
       }
       return;
