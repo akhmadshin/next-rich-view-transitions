@@ -1,6 +1,7 @@
 import { getElementAbsolutePosition } from './get-element-absolute-position';
 import { isTransitionAvailable } from './is-transition-available';
 import { runTransition } from './run-transition';
+import { cleanUpTransition } from './clean-up-transition';
 
 export const handleHistoryTransitionStarted = async (futureKeyOrig: string) => {
   await runTransition();
@@ -31,7 +32,7 @@ export const handleHistoryTransitionStarted = async (futureKeyOrig: string) => {
       const isViewTransitionAvailable = isTransitionAvailable(`${routerKey}-${futureKey}`);
 
       if (isViewTransitionAvailable) {
-        cleanUp();
+        cleanUpTransition();
         clickedImg.style.viewTransitionName = '__NRVT_transition-img';
       }
       return;

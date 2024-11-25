@@ -1,6 +1,7 @@
 import { isTransitionAvailable } from './is-transition-available';
 import { getElementSelector } from './get-element-selector';
 import type { SingletonRouter } from 'next/router';
+import { cleanUpTransition } from './clean-up-transition';
 
 export const getHandleRouteChangeComplete = (singletonRouter: SingletonRouter) => () => {
   if (typeof window === 'undefined') {
@@ -38,7 +39,7 @@ export const getHandleRouteChangeComplete = (singletonRouter: SingletonRouter) =
   const imgSelector = sessionStorage.getItem(`__NRVT_view_transition_image_selector_${backRouterKey}`);
   const img = imgSelector ? document.querySelector<HTMLImageElement>(imgSelector) : undefined;
 
-  cleanUp();
+  cleanUpTransition();
   if (img && isViewTransitionAvailable) {
     img.style.viewTransitionName = '__NRVT_transition-img';
   } else {
