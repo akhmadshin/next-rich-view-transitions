@@ -44,8 +44,12 @@ export const getHandleRouteChangeComplete = (singletonRouter: SingletonRouter) =
     img.style.viewTransitionName = '__NRVT_transition-img';
   } else {
     // Navigation via clicking link
-    const transitionImg = document.querySelector<HTMLImageElement>(`img[src$='${window.__NRVT_transitionImgSrc}']`);
 
+    const transitionImg = document.querySelector<HTMLImageElement>(`[${window.__NRVT_transitionAttributeName}="${window.__NRVT_transitionAttributeValue}"]`);
+
+    console.log('getHandleRouteChangeComplete window.__NRVT_transitionAttribute = ', window.__NRVT_transitionAttributeName);
+    console.log('getHandleRouteChangeComplete window.__NRVT_transitionAttributeValue = ', window.__NRVT_transitionAttributeValue);
+    console.log('getHandleRouteChangeComplete transitionImg = ', transitionImg);
     if (transitionImg) {
       const imgSelector = getElementSelector(transitionImg) || '';
       transitionImg.style.viewTransitionName = '__NRVT_transition-img';
@@ -53,7 +57,7 @@ export const getHandleRouteChangeComplete = (singletonRouter: SingletonRouter) =
     }
   }
 
-  window.__NRVT_transitionImgSrc = undefined;
+  window.__NRVT_transitionAttributeValue = undefined;
   if (window.__NRVT_pageMounted) {
     window.__NRVT_pageMounted();
     window.__NRVT_pageMounted = undefined;

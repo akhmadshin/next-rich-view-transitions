@@ -2,7 +2,8 @@ declare global {
   interface Window {
     __NRVT_viewTransition?: ViewTransition;
     __NRVT_pageMounted?: () => void;
-    __NRVT_transitionImgSrc?: string;
+    __NRVT_transitionAttributeValue?: string;
+    __NRVT_transitionAttributeName?: string;
     __NRVT_transitionImgSelector?: string;
     __NRVT_transitionImgPosition?: string;
     __NRVT_routerKey?: string;

@@ -28,7 +28,7 @@ export const handleHistoryTransitionStarted = async (futureKeyOrig: string) => {
         JSON.stringify(imgPosition)
       );
 
-      window.__NRVT_transitionImgSrc = clickedImg.src.replace(location.origin || '', '');
+      window.__NRVT_transitionAttributeValue = clickedImg.src.replace(location.origin || '', '');
       const isViewTransitionAvailable = isTransitionAvailable(`${routerKey}-${futureKey}`);
 
       if (isViewTransitionAvailable) {

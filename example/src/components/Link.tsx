@@ -20,7 +20,12 @@ export function Link(props: React.ComponentProps<typeof NextLink>) {
         // Find an image that should start transitioning. Feel free to change that code.
         const transitionImg = e.currentTarget.querySelector<HTMLImageElement>('.transitionable-img') || document.querySelector('#transition-img');
 
-        startViewTransition(transitionImg).then(() => {
+        const src = transitionImg ? transitionImg.src : '';
+        startViewTransition({
+          element: transitionImg,
+          attributeName: 'src',
+          attributeValue: src.replace(location.origin || '', ''),
+        }).then(() => {
           navigate(as || href, as, { scroll: scroll ?? true });
         });
       }
