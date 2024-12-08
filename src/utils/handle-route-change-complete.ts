@@ -47,9 +47,6 @@ export const getHandleRouteChangeComplete = (singletonRouter: SingletonRouter) =
 
     const transitionImg = document.querySelector<HTMLImageElement>(`[${window.__NRVT_transitionAttributeName}="${window.__NRVT_transitionAttributeValue}"]`);
 
-    console.log('getHandleRouteChangeComplete window.__NRVT_transitionAttribute = ', window.__NRVT_transitionAttributeName);
-    console.log('getHandleRouteChangeComplete window.__NRVT_transitionAttributeValue = ', window.__NRVT_transitionAttributeValue);
-    console.log('getHandleRouteChangeComplete transitionImg = ', transitionImg);
     if (transitionImg) {
       const imgSelector = getElementSelector(transitionImg) || '';
       transitionImg.style.viewTransitionName = '__NRVT_transition-img';
