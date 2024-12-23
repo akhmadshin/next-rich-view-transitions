@@ -18,7 +18,6 @@ export const handleHistoryTransitionStarted = async (futureKeyOrig: string) => {
   }
 
   const bffImgSelector = sessionStorage.getItem(`__NRVT_view_transition_image_selector_${routerKey}-${futureKey}`) || '';
-
   if (bffImgSelector) {
     const clickedImg = document.querySelector<HTMLImageElement>(bffImgSelector);
     if (clickedImg && clickedImg.src) {
